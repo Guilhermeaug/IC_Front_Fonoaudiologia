@@ -1,49 +1,15 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:sistema_especialista/pages/assessment_step2.dart';
-import 'package:sistema_especialista/pages/assessment_step1.dart';
-import 'package:sistema_especialista/pages/diagnostics_page.dart';
-import 'package:sistema_especialista/pages/home_page.dart';
-import 'package:sistema_especialista/pages/patients_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_strategy/url_strategy.dart';
+
+import 'routes.dart';
 
 void main() {
   setPathUrlStrategy();
-  runApp(const App());
+  runApp(const ProviderScope(child: App()));
 }
-
-final GoRouter _router = GoRouter(
-  routes: <GoRoute>[
-    GoRoute(
-      path: '/',
-      builder: (BuildContext context, GoRouterState state) => const HomePage(),
-      routes: [
-        GoRoute(
-          path: 'pacientes',
-          builder: (BuildContext context, GoRouterState state) =>
-              const PatientsPage(),
-          routes: <RouteBase>[
-            GoRoute(
-              path: 'step1/1',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const AssessmentStep1(),
-            ),
-            GoRoute(
-              path: 'step1/2',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const AssessmentStep2(),
-            ),
-            GoRoute(
-              path: 'questoes',
-              builder: (BuildContext context, GoRouterState state) =>
-              const DiagnosticsPage(),
-            ),
-          ],
-        ),
-      ],
-    ),
-  ],
-);
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -51,9 +17,34 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: _router,
+      routerConfig: router,
       title: 'Sistema Especialista',
-      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Raleway'),
+      theme: FlexThemeData.light(
+        scheme: FlexScheme.deepBlue,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 9,
+        subThemesData: const FlexSubThemesData(
+          blendOnLevel: 10,
+          blendOnColors: false,
+        ),
+        visualDensity: FlexColorScheme.comfortablePlatformDensity,
+        useMaterial3: true,
+        swapLegacyOnMaterial3: true,
+        fontFamily: GoogleFonts.notoSans().fontFamily,
+      ),
+      darkTheme: FlexThemeData.dark(
+        scheme: FlexScheme.deepBlue,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 15,
+        subThemesData: const FlexSubThemesData(
+          blendOnLevel: 20,
+        ),
+        visualDensity: FlexColorScheme.comfortablePlatformDensity,
+        useMaterial3: true,
+        swapLegacyOnMaterial3: true,
+        fontFamily: GoogleFonts.notoSans().fontFamily,
+      ),
+      themeMode: ThemeMode.system,
     );
   }
 }
