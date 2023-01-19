@@ -26,9 +26,9 @@ class Question extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Content(),
-        const VerticalSpace(15),
+        const VerticalSpace(5),
         const Expanded(child: FeedbackQuestion()),
-        const VerticalSpace(15),
+        const VerticalSpace(5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

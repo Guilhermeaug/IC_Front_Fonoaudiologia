@@ -10,26 +10,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
 
-    return SelectionArea(
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 600) {
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text('Sistema Especialista'),
-              ),
-              body: DesktopView(width: width),
-            );
-          } else {
-            return Scaffold(
-              appBar: AppBar(
-                title: const Text('Sistema Especialista'),
-              ),
-              body: MobileView(width: width),
-            );
-          }
-        },
-      ),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth > 600) {
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Sistema Especialista'),
+            ),
+            body: DesktopView(width: width),
+          );
+        } else {
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Sistema Especialista'),
+            ),
+            body: MobileView(width: width),
+          );
+        }
+      },
     );
   }
 }

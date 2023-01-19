@@ -32,7 +32,7 @@ class Overview extends ConsumerWidget {
         for (var item in theory.media)
           Padding(
             padding: const EdgeInsets.all(2.0),
-            child: Image.network('http://sistemaespecialistastrapi.eastus.cloudapp.azure.com:1337$item'),
+            child: Image.network('https://sistema-especialista.azurewebsites.net/$item'),
           ),
       ],
     );

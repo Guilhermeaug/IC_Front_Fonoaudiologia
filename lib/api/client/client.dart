@@ -8,11 +8,11 @@ part 'client.g.dart';
 @riverpod
 ChopperClient chopperClient(ChopperClientRef ref) {
   return ChopperClient(
-    baseUrl: Uri.parse('http://sistemaespecialistastrapi.eastus.cloudapp.azure.com:1337/api'),
+    baseUrl: Uri.parse('https://sistema-especialista.azurewebsites.net/api'),
     interceptors: [
       const HeadersInterceptor({
         'Authorization':
-        'Bearer 18accbd3a2f1d091ab71f89ec58b64af4ac72e3764b247c8ac73c2465387226c64ae4f2b0c5cb202b248bd70c6f8d406fc4bfb22d36cae8544091d88130e427c37ad2a2f722a2c0f07e0bad179d9e6d4040d018b5669e8f0c2359016fddb8fe1a2c00220f8835fda8aeac6b33a6f97f0753132ab240c58b8721cbd37a83d5fb3'
+        'Bearer 9f1e8a16a3ae10533fdf91c83241f37eedd2a3c9a1738bcc569065772c20fd8f1a9353b904dc8f35bdd7b10b3de24e363e01102b2a0781f56de13a41756a1919c47be0e4467603f2ab794e7e168ea475f1852310db1dcbc68bd6c312476d16726b7c15bd903d83045f3ff16923709fdf326085e926ed315b464e15bf1da3eb1b'
       }),
     ],
     converter: const JsonConverter(),

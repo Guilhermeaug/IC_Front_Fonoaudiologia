@@ -20,7 +20,7 @@ class App extends StatelessWidget {
       routerConfig: router,
       title: 'Sistema Especialista',
       theme: FlexThemeData.light(
-        scheme: FlexScheme.deepBlue,
+        scheme: FlexScheme.outerSpace,
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
         blendLevel: 9,
         subThemesData: const FlexSubThemesData(
@@ -33,7 +33,7 @@ class App extends StatelessWidget {
         fontFamily: GoogleFonts.notoSans().fontFamily,
       ),
       darkTheme: FlexThemeData.dark(
-        scheme: FlexScheme.deepBlue,
+        scheme: FlexScheme.outerSpace,
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
         blendLevel: 15,
         subThemesData: const FlexSubThemesData(
@@ -44,7 +44,7 @@ class App extends StatelessWidget {
         swapLegacyOnMaterial3: true,
         fontFamily: GoogleFonts.notoSans().fontFamily,
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
     );
   }
 }

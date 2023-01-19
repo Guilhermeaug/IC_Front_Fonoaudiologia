@@ -31,18 +31,18 @@ class _ContentState extends ConsumerState<Content> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Questão ${index + 1}'),
-            const VerticalSpace(10),
+            const VerticalSpace(5),
             Text(
               question.title,
               style: const TextStyle(
-                fontSize: 16,
                 overflow: TextOverflow.clip,
               ),
             ),
-            const VerticalSpace(10),
+            const VerticalSpace(5),
             RadioListTile(
-              title: Text(question.A),
+              title: Text(question.A, style: const TextStyle(fontSize: 12)),
               value: 1,
+              dense: true,
               groupValue: _value,
               contentPadding: const EdgeInsets.all(0),
               onChanged: (int? value) {
@@ -52,8 +52,9 @@ class _ContentState extends ConsumerState<Content> {
               },
             ),
             RadioListTile(
-              title: Text(question.B),
+              title: Text(question.B, style: const TextStyle(fontSize: 12)),
               value: 2,
+              dense: true,
               groupValue: _value,
               contentPadding: const EdgeInsets.all(0),
               onChanged: (int? value) {
@@ -63,8 +64,9 @@ class _ContentState extends ConsumerState<Content> {
               },
             ),
             RadioListTile(
-              title: Text(question.C),
+              title: Text(question.C, style: const TextStyle(fontSize: 12)),
               value: 3,
+              dense: true,
               groupValue: _value,
               contentPadding: const EdgeInsets.all(0),
               onChanged: (int? value) {
@@ -74,8 +76,9 @@ class _ContentState extends ConsumerState<Content> {
               },
             ),
             RadioListTile(
-              title: Text(question.D),
+              title: Text(question.D, style: const TextStyle(fontSize: 12)),
               value: 4,
+              dense: true,
               groupValue: _value,
               contentPadding: const EdgeInsets.all(0),
               onChanged: (int? value) {
@@ -86,8 +89,9 @@ class _ContentState extends ConsumerState<Content> {
             ),
             if (question.E != null)
               RadioListTile(
-                title: Text(question.E!),
+                title: Text(question.E!, style: const TextStyle(fontSize: 12)),
                 value: 5,
+                dense: true,
                 groupValue: _value,
                 contentPadding: const EdgeInsets.all(0),
                 onChanged: (int? value) {
@@ -101,7 +105,7 @@ class _ContentState extends ConsumerState<Content> {
               child: ElevatedButton(
                 style: ButtonStyle(
                   fixedSize: MaterialStateProperty.all(
-                    const Size(150, 30),
+                    const Size(120, 30),
                   ),
                 ),
                 onPressed: () {

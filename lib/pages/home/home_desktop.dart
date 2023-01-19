@@ -33,7 +33,6 @@ class DesktopView extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue,
                       ),
                     ),
                     Text.rich(
